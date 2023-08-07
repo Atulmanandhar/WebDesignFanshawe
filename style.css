@@ -2,6 +2,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 * {
@@ -31,6 +33,12 @@ h6 {
   overflow-wrap: break-word;
 }
 
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
 @font-face {
   font-family: Atlas-Sans;
   src: url("./assets/fonts/Atlas_Sans/Atlas_sans.ttf");
@@ -51,6 +59,11 @@ h6 {
   src: url("./assets/fonts/Atlas_Sans/Hickory.ttf");
   font-display: swap;
 }
+@font-face {
+  font-family: OpenSans;
+  src: url("./assets/fonts/Open_Sans/OpenSans-Regular.ttf");
+  font-display: swap;
+}
 
 :root {
   /* fonts */
@@ -58,6 +71,7 @@ h6 {
   --ff-atlas-slab: "Atlas-Slab";
   --ff-sandman: "Sandman-fill";
   --ff-hickory: "Hickory";
+  --ff-opensans: "OpenSans";
 
   /* colours */
 
@@ -74,6 +88,9 @@ h6 {
 
 html {
   scroll-snap-type: y mandatory;
+  color: var(--black);
+  font-family: var(--ff-opensans);
+  background-color: var(--black);
 }
 
 .container-wrapper {
@@ -82,11 +99,34 @@ html {
   height: 100%;
 }
 
+.card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+
+h2 {
+  font-family: var(--ff-atlas-sans);
+  font-size: 2rem;
+}
+
+h3 {
+  color: var(--black);
+  font-family: var(--ff-sandman);
+  font-size: 1.4rem;
+}
+
+p {
+  font-size: 0.75rem;
+}
+
 #home > section {
   height: 100vh;
   width: 100%;
   scroll-snap-align: start;
   scroll-snap-stop: always;
+  overflow: hidden;
 }
 
 #hero {
@@ -96,6 +136,40 @@ html {
   align-items: center;
   height: 100%;
   width: 100%;
+}
+
+nav {
+  position: absolute;
+  z-index: 30;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--black);
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding-block: 1rem;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-family: var(--ff-atlas-sans);
+  color: var(--white);
+}
+
+nav ul li .divider {
+  width: 2px;
+  height: 1.2rem;
+  background-color: white;
 }
 
 #hero > .videoContainer {
@@ -135,7 +209,6 @@ html {
 }
 #hero h3 {
   color: var(--white);
-  font-family: var(--ff-sandman);
   font-size: 1.4rem;
 }
 
@@ -146,8 +219,6 @@ html {
 }
 
 #about-nepal h2 {
-  font-family: var(--ff-atlas-sans);
-  font-size: 2rem;
 }
 
 #about-nepal .content {
@@ -172,10 +243,6 @@ html {
   /* height: 100%; */
   display: flex;
   flex-shrink: 0;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  cursor: pointer;
 }
 
 #about-nepal .card > img {
@@ -188,6 +255,71 @@ html {
   animation: pulseImage 7s linear;
 }
 
+/* architecture-gems */
+
+#architecture-gems {
+  background-color: var(--black);
+  padding-bottom: 4rem;
+}
+
+#architecture-gems h2,
+h3 {
+  color: var(--white);
+}
+
+#architecture-gems .cards-wrapper {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+#architecture-gems .card {
+  position: relative;
+}
+
+#architecture-gems .text-content-overlay {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: max-content;
+  background: linear-gradient(
+    0deg,
+    rgba(30, 30, 32, 0.6),
+    rgba(30, 30, 32, 0.4)
+  );
+  z-index: 20;
+  pointer-events: none;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  opacity: 0;
+  transition: all 500ms ease;
+}
+
+#architecture-gems .text-content-overlay .description {
+  color: var(--white);
+  font-weight: bold;
+}
+
+#architecture-gems .card > img {
+  filter: grayscale(90%);
+  transition: all 500ms ease;
+  z-index: 10;
+}
+
+#architecture-gems .card > img:hover {
+  filter: grayscale(20%);
+}
+
+#architecture-gems .card:hover .text-content-overlay {
+  opacity: 1;
+}
+
 /* desktop */
 @media (min-width: 768px) {
   .container-wrapper {
@@ -196,15 +328,18 @@ html {
     max-width: var(--maxWidth);
   }
 
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
   #hero h1 {
     color: var(--white);
     font-family: var(--ff-atlas-sans);
     font-size: 5rem;
-  }
-  #hero h3 {
-    color: var(--white);
-    font-family: var(--ff-sandman);
-    font-size: 2rem;
   }
 
   #about-nepal {
@@ -232,8 +367,22 @@ html {
   }
 
   #about-nepal h2 {
-    font-family: var(--ff-atlas-sans);
-    font-size: 2.5rem;
+  }
+
+  #architecture-gems .container-wrapper {
+    margin-inline: auto;
+    padding-block: 4rem;
+  }
+
+  #architecture-gems .cards-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 1rem;
+    padding-top: 1rem;
+  }
+
+  #architecture-gems .text-content-overlay {
+    /* height: 20%; */
   }
 }
 
@@ -242,7 +391,7 @@ html {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
   100% {
     transform: scale(1);
