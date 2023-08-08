@@ -76,6 +76,7 @@ img {
   /* colours */
 
   --black: #252323;
+  --rich-black: #171a21;
   --white: #f5f1ed;
   --gray: #7e7f9a;
   --bone: #dad2bc;
@@ -119,6 +120,14 @@ h3 {
 
 p {
   font-size: 0.75rem;
+}
+
+.relative {
+  position: relative;
+}
+
+.text-center {
+  text-align: center;
 }
 
 #home > section {
@@ -212,13 +221,14 @@ nav ul li .divider {
   font-size: 1.4rem;
 }
 
-/* Aboit Nepal Section */
+/* About Nepal Section */
 
 #about-nepal {
   background-color: var(--white);
 }
 
 #about-nepal h2 {
+  text-align: center;
 }
 
 #about-nepal .content {
@@ -236,6 +246,10 @@ nav ul li .divider {
   flex-direction: column;
   gap: 1rem;
 }
+#about-nepal p {
+  font-family: var(--ff-sandman);
+  font-size: 1.5rem;
+}
 
 #about-nepal .card {
   min-width: 250px;
@@ -249,22 +263,26 @@ nav ul li .divider {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  animation: pulseImage 7s ease infinite;
 }
 
 #about-nepal .card > img:hover {
-  animation: pulseImage 7s linear;
+  /* animation: pulseImage 7s linear; */
 }
 
 /* architecture-gems */
 
 #architecture-gems {
-  background-color: var(--black);
+  background-color: var(--rich-black);
   padding-bottom: 4rem;
 }
 
 #architecture-gems h2,
 h3 {
   color: var(--white);
+}
+#architecture-gems h2 {
+  text-align: center;
 }
 
 #architecture-gems .cards-wrapper {
@@ -286,10 +304,11 @@ h3 {
   width: 100%;
   height: max-content;
   background: linear-gradient(
-    0deg,
-    rgba(30, 30, 32, 0.6),
-    rgba(30, 30, 32, 0.4)
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.3) 20%,
+    rgb(0, 0, 0)
   );
+
   z-index: 20;
   pointer-events: none;
   padding-left: 1rem;
@@ -312,12 +331,65 @@ h3 {
   z-index: 10;
 }
 
-#architecture-gems .card > img:hover {
+#architecture-gems .card > img:hover,
+#architecture-gems .card:focus-within img {
   filter: grayscale(20%);
 }
 
-#architecture-gems .card:hover .text-content-overlay {
+#architecture-gems .card:hover .text-content-overlay,
+#architecture-gems .card:focus-within .text-content-overlay {
   opacity: 1;
+}
+
+#hidden-treasures {
+  background-color: var(--white);
+}
+
+#hidden-treasures .description {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-block-start: 2rem;
+  font-family: var(--ff-sandman);
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--black);
+  /* background-color: pink; */
+}
+
+footer p {
+  color: var(--white);
+  text-align: center;
+}
+.footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+footer ul li {
+  list-style: none;
+  text-align: center;
+}
+
+footer ul li a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-family: var(--ff-atlas-sans);
+  color: var(--white);
+}
+
+footer ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 /* desktop */
@@ -367,8 +439,12 @@ h3 {
   }
 
   #about-nepal h2 {
+    text-align: left;
   }
 
+  #about-nepal p {
+    font-size: 1.8rem;
+  }
   #architecture-gems .container-wrapper {
     margin-inline: auto;
     padding-block: 4rem;
@@ -383,6 +459,25 @@ h3 {
 
   #architecture-gems .text-content-overlay {
     /* height: 20%; */
+  }
+
+  #hidden-treasures .description {
+    font-size: 2rem;
+    text-align: center;
+    margin-block-start: 3rem;
+  }
+
+  .footer-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .footer-wrapper h3 {
+    display: none;
+  }
+  footer ul {
+    flex-direction: row;
   }
 }
 
