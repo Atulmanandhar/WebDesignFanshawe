@@ -7,20 +7,45 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <section id="contact" style="background: pink">
+    <section id="contact">
       <nav>
         <ul>
           <li>
-            <a href="" tabindex="1">Home</a>
+            <a href="index.html" tabindex="1">Home</a>
           </li>
           <li>
             <div class="divider" />
           </li>
           <li>
-            <a href="" tabindex="2">Contact</a>
+            <a href="contact.html" tabindex="2">Contact</a>
           </li>
         </ul>
       </nav>
+
+      <div class="container-wrapper">
+        <h2>Reach out to us</h2>
+        <form id="contact-form">
+          <div class="input-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" required />
+          </div>
+          <div class="input-group">
+            <label for="email">Your Email</label>
+            <input
+              type="email"
+              name="email"
+              placeholder=""
+              id="email"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <label for="learn">What would you like to learn about?</label>
+            <textarea id="learn" rows="3"></textarea>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
 
       <footer>
         <div class="container-wrapper footer-wrapper">
@@ -31,10 +56,10 @@
             <h3>Useful links</h3>
             <ul>
               <li>
-                <a href="">Home</a>
+                <a href="index.html">Home</a>
               </li>
               <li>
-                <a href="">Contact</a>
+                <a href="contact.html">Contact</a>
               </li>
             </ul>
           </div>

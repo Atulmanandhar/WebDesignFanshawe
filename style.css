@@ -131,7 +131,7 @@ p {
 }
 
 #home > section {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   scroll-snap-align: start;
   scroll-snap-stop: always;
@@ -396,7 +396,49 @@ footer ul {
 #contact {
   height: 100vh;
   width: 100%;
+  background-color: var(--white);
   position: relative;
+  padding-top: 70px;
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+#contact-form > .input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+#contact-form label {
+  font-size: 20px;
+  font-family: var(--ff-sandman);
+}
+
+#contact-form input,
+#contact-form textarea {
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: 0;
+  font-size: 12px;
+}
+
+button {
+  padding-block: 12px;
+  margin-block-start: 4rem;
+  background-color: var(--rich-black);
+  color: var(--white);
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 12px;
+  transition: background-color 0.4s ease;
+}
+
+button:hover {
+  background-color: rgb(23, 26, 33, 0.8);
 }
 
 /* desktop */
