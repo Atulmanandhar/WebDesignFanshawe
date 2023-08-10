@@ -44,21 +44,13 @@ img {
   src: url("./assets/fonts/Atlas_Sans/Atlas_sans.ttf");
   font-display: swap;
 }
-@font-face {
-  font-family: Atlas-Slab;
-  src: url("./assets/fonts/Atlas_Sans/Atlas_slab.ttf");
-  font-display: swap;
-}
+
 @font-face {
   font-family: Sandman-fill;
   src: url("./assets/fonts/Atlas_Sans/Sandman_Fill.ttf");
   font-display: swap;
 }
-@font-face {
-  font-family: Hickory;
-  src: url("./assets/fonts/Atlas_Sans/Hickory.ttf");
-  font-display: swap;
-}
+
 @font-face {
   font-family: OpenSans;
   src: url("./assets/fonts/Open_Sans/OpenSans-Regular.ttf");
@@ -68,9 +60,7 @@ img {
 :root {
   /* fonts */
   --ff-atlas-sans: "Atlas-Sans";
-  --ff-atlas-slab: "Atlas-Slab";
   --ff-sandman: "Sandman-fill";
-  --ff-hickory: "Hickory";
   --ff-opensans: "OpenSans";
 
   /* colours */
