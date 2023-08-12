@@ -3,6 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Immerse yourself in the breathtaking beauty of Nepal. Explore the majestic Himalayas, ancient temples, and hidden treasures. Your journey of a lifetime awaits."
+    />
+    <meta
+      name="keywords"
+      content="Discover Nepal, Nepal beauty, Himalayan landscapes, architectural treasures, ancient temples, hidden treasures"
+    />
     <title>Discover Nepal | Home</title>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -12,20 +20,29 @@
         <nav>
           <ul>
             <li>
-              <a href="index.html" tabindex="1">Home</a>
+              <a href="index.html" tabindex="1" aria-label="Visit Home Page"
+                >Home</a
+              >
             </li>
             <li>
               <div class="divider" />
             </li>
             <li>
-              <a href="contact.html" tabindex="2">Contact</a>
+              <a
+                href="contact.html"
+                tabindex="2"
+                aria-label="Visit Contact Page"
+                >Contact</a
+              >
             </li>
           </ul>
         </nav>
         <div class="content-container">
-          <h1 class="title">Discover Nepal</h1>
-          <h3 class="subtitle">
-            Where Nature's Majesty Embraces Spiritual Serenity.
+          <h1 class="title" id="mainTitle" aria-label="Introduction">
+            Discover Nepal
+          </h1>
+          <h3 class="subtitle" aria-labelledby="mainTitle">
+            Where Nature's Majesty Embraces Spiritual Serenity
           </h3>
         </div>
         <div class="videoContainer">
@@ -37,8 +54,10 @@
         <div class="container-wrapper">
           <div class="content">
             <div class="text-content">
-              <h2>Unveiling the Land of Himalayan Wonders</h2>
-              <p>
+              <h2 id="himalayan-wonders">
+                Unveiling the Land of Himalayan Wonders
+              </h2>
+              <p aria-labelledby="himalayan-wonders">
                 Nestled in the lap of the Himalayas, Nepal is a land of diverse
                 landscapes, from snow-capped mountains to lush green valleys.
                 This enchanting country is known for its warm hospitality,
@@ -46,7 +65,10 @@
               </p>
             </div>
             <div class="card">
-              <img src="assets/media/namche.avif" alt="" />
+              <img
+                src="assets/media/namche.avif"
+                alt="Kongde Ri Mountain of Namche Bazar"
+              />
             </div>
           </div>
         </div>
@@ -56,10 +78,10 @@
           <h2>Architectural Gems</h2>
           <div class="cards-wrapper">
             <div class="card" tabindex="3">
-              <img src="assets/media/nyatapola.avif" alt="" />
+              <img src="assets/media/nyatapola.avif" alt="Nyatapola Temple" />
               <div class="text-content-overlay">
-                <h3>Nyatapola</h3>
-                <p class="description">
+                <h3 id="nyatapola">Nyatapola</h3>
+                <p class="description" aria-labelledby="nyatapola">
                   Nepal's majestic pagoda, adorned with intricate carvings,
                   dedicated to Siddhi Lakshmi, a symbol of cultural heritage and
                   spirituality.
@@ -67,10 +89,10 @@
               </div>
             </div>
             <div class="card" tabindex="4">
-              <img src="assets/media/boudhanath.avif" alt="" />
+              <img src="assets/media/boudhanath.avif" alt="Boudhanath Temple" />
               <div class="text-content-overlay">
-                <h3>Boudhanath</h3>
-                <p class="description">
+                <h3 id="boudhanath">Boudhanath</h3>
+                <p class="description" aria-labelledby="boudhanath">
                   Witness the grandeur of the Boudhanath Stupa, one of the
                   largest stupas in the world and an important Buddhist
                   pilgrimage site.
@@ -82,8 +104,10 @@
       </section>
       <section id="hidden-treasures" class="relative">
         <div class="container-wrapper content-container">
-          <h2 class="text-center">Unveil the Hidden Treasures</h2>
-          <p class="description">
+          <h2 class="text-center" id="hidden-treasures">
+            Unveil the Hidden Treasures
+          </h2>
+          <p class="description" aria-labelledby="hidden-treasures">
             Embark on an enchanting adventure in Nepal, where towering Himalayan
             peaks, ancient temples, and warm hospitality await. Discover
             spiritual enlightenment, thrilling escapades, and the magic of
@@ -102,10 +126,12 @@
               <h3>Useful links</h3>
               <ul>
                 <li>
-                  <a href="index.html">Home</a>
+                  <a href="index.html" aria-label="Visit Home Page">Home</a>
                 </li>
                 <li>
-                  <a href="contact.html">Contact</a>
+                  <a href="contact.html" aria-label="Visit Contact Page"
+                    >Contact</a
+                  >
                 </li>
               </ul>
             </div>
