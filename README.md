@@ -2,6 +2,7 @@
 
 First Edit
 wnr20230627
+WNR project received 20230820
 
 This is my final project for the web design course under MAP-1 2023 Summer.
 
